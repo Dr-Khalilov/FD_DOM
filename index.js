@@ -1,21 +1,21 @@
 'use strict';
+const btns = document.querySelectorAll('#root > button');
+// const div = document.getElementById('root');
 
-const [div] = document.getElementsByTagName('div');
-div.addEventListener('click', showAlert);
 
-function showAlert() {
-    alert('Click on div');
+
+const clickHandler = (event) => {
+    const { target: { dataset: { color }, parentNode, },
+    } = event;
+    parentNode.style.backgroundColor = color;
 };
 
-const addNum = (n) => (m) => n += m;
+for (const btn of btns) {
+    btn.addEventListener('click', clickHandler);
+};
 
-const summator =addNum(10);
 
-const process = ({target:{textContent}}) =>{
-    console.group('Handler');
-    console.dir(textContent);
-    console.groupEnd();
-}
-
-const button = document.querySelector('#btn');
-button.addEventListener('click',process);
+/*
+Поменять местами содержимое кнопок
+по наведению на кнопку close
+*/
