@@ -63,7 +63,7 @@ function getEvenNums(arrOfNums) {
     let result = [];
     let count = 0;
     for (let i = 0; i < arrOfNums.length; i++) {
-        if (arrOfNums[i] === 0) { // условие должно быть равным нулю чтобы выводились элементы равные 0
+        if (arrOfNums[i] % 2 === 0) { // условие должно быть равным нулю чтобы выводились элементы равные 0
             result.push(arrOfNums[i]); // i если нужно выести индексы
             count++;
         }
@@ -77,12 +77,38 @@ console.log(even);
 
 // 4 Создать классы:
 // - Книга (автор, название, год издания, издательство)
-// - Электронная версия книги (автор, название, год издания, издательство, формат, электронный номер)
 class Book {
-    constructor(author, title, yearOfPublishing, publisher) {
+    constructor(author, name, yearOfPublishing, publisher) {
         this.author = author;
-        this.title = title;
+        this.name = name;
         this.yearOfPublishing = yearOfPublishing;
         this.publisher = publisher;
     }
 }
+
+// - Электронная версия книги (автор, название, год издания, издательство, формат, электронный номер)
+class Ebook extends Book {
+    constructor(author, name, yearOfPublishing, publisher, format, eNumber) {
+        super(author, name, yearOfPublishing, publisher);
+        this.format = format;
+        this.eNumber = eNumber;
+    }
+}
+
+// 5 Требуется написать функцию, выводящую в консоль числа от 1 до n, где n — это целое число,
+// которая функция принимает в качестве параметра, с такими условиями:
+// вывод fizzbuzz вместо чисел, кратных как 3, так и 5.
+// вывод fizz вместо чисел, кратных 3;
+// вывод buzz вместо чисел, кратных 5;
+function getOutputNumbersOnConsole(n) {
+    for (let i = 1; i <= n; i++) {
+        let output = "";
+        if (i % 3 === 0) {
+            output += "Fizz";
+        }
+        if (i % 5 === 0) {
+            output += "Buzz";
+        }
+        console.log(output || i);
+    };
+};
