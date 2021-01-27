@@ -102,13 +102,15 @@ class Ebook extends Book {
 // вывод buzz вместо чисел, кратных 5;
 function getOutputNumbersOnConsole(n) {
     for (let i = 1; i <= n; i++) {
-        let output = "";
+
         if (i % 3 === 0) {
-            output += "Fizz";
+            return `${i} - ${'Fizz'}`;
         }
         if (i % 5 === 0) {
-            output += "Buzz";
+            return `${i} - ${"Buzz"}`;
         }
-        console.log(output || i);
+        if(i % 3 === 0 && i % 5 === 0){
+            return `${i} - ${"FizzBuzz"}`;
+        }
     };
 };
