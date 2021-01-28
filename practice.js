@@ -93,7 +93,7 @@ const evenNums = getEvenNums(array);
 console.log(evenNums);
 
 // 3.4 Вывести индексы нулевых элементов (элемент равен нулю)
-function getIndexNullsElements(arrOfNums) {
+function getIndexNullElements(arrOfNums) {
     let result = [];
     for (let i = 0; i < arrOfNums.length; i++) {
         if (arrOfNums[i] === 0) {
@@ -103,11 +103,11 @@ function getIndexNullsElements(arrOfNums) {
     return result;
 };
 
-const nullsElem = getIndexNullsElements(array);
-console.log(nullsElem);
+const nullElem = getIndexNullElements(array);
+console.log(nullElem);
 
 // 3.5 Подсчитать количество нулевых элементов
-function calcQuantityNullsElements(arrOfNums) {
+function calcQuantityNullElements(arrOfNums) {
     let count = 0;
     for (let i = 0; i < arrOfNums.length; i++) {
         if (arrOfNums[i] === 0) {
@@ -117,7 +117,7 @@ function calcQuantityNullsElements(arrOfNums) {
     return count;
 };
 
-const countNullsElem = calcQuantityNullsElements(array);
+const countNullsElem = calcQuantityNullElements(array);
 console.log(countNullsElem);
 
 // 4 Создать классы:
